@@ -11,11 +11,9 @@ public class Main {
         try (Scanner scanner =  new Scanner(System.in)) {
             do {
                 weight = getValueFromCon(scanner,"Enter weight:");
-                System.out.println("it's test");
                 pricePerKg = getValueFromCon(scanner,"Enter pricePerKg:");
                 length = getValueFromCon(scanner,"Enter length:");
                 pricePerKm = getValueFromCon(scanner,"Enter pricePerKm:");
-                //committ
                 //hello gitHub
                 //BigDecimal result =  weight.multiply(pricePerKg).add(length.multiply(pricePerKm));
                 System.out.println("Result " + new Calcimp().handle(weight, pricePerKg, length, pricePerKm));
