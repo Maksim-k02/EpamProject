@@ -14,6 +14,7 @@ public class Main {
                 pricePerKg = getValueFromCon(scanner,"Enter pricePerKg:");
                 length = getValueFromCon(scanner,"Enter length:");
                 pricePerKm = getValueFromCon(scanner,"Enter pricePerKm:");
+                //commit
                 //BigDecimal result =  weight.multiply(pricePerKg).add(length.multiply(pricePerKm));
                 System.out.println("Result " + new Calcimp().handle(weight, pricePerKg, length, pricePerKm));
             } while (!scanner.hasNext("q")) ;
