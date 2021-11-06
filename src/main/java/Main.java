@@ -1,33 +1,29 @@
-import calc.Calc;
-import calc.Calcimp;
+
+import model.ReadData;
+import model.Status;
+import model.StatusType;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        //TODO read from file
+        //pricePerKg = getValueFromCon(scanner,"Enter pricePerKg:");
+        //pricePerKm = getValueFromCon(scanner,"Enter pricePerKm:");
 
         BigDecimal weight, pricePerKg, length, pricePerKm;
         try (Scanner scanner =  new Scanner(System.in)) {
-            do {
-                weight = getValueFromCon(scanner,"Enter weight:");
-                pricePerKg = getValueFromCon(scanner,"Enter pricePerKg:");
-                length = getValueFromCon(scanner,"Enter length:");
-                pricePerKm = getValueFromCon(scanner,"Enter pricePerKm:");
-                //hello gitHub
-                //BigDecimal result =  weight.multiply(pricePerKg).add(length.multiply(pricePerKm));
-                System.out.println("Result " + new Calcimp().handle(weight, pricePerKg, length, pricePerKm));
-            } while (!scanner.hasNext("q")) ;
-                if (scanner.hasNext("q")) scanner.close();
+            Status currentStatus =  new ReadData(scanner);
+            while (currentStatus.getType() != StatusType.EXIT){
+                System.out.println("current type: " + currentStatus.getType());
+                currentStatus = currentStatus.handle();
+
+            }
+
+
 
         }
-    }
-
-    private static BigDecimal getValueFromCon(Scanner scanner, String outputMassage) {
-        BigDecimal enteredValue;
-        System.out.print(outputMassage);
-        enteredValue = scanner.nextBigDecimal();
-        return enteredValue;
     }
 
 }
