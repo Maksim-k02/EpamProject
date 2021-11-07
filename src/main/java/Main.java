@@ -11,8 +11,8 @@ public class Main {
         //TODO read from file
         //pricePerKg = getValueFromCon(scanner,"Enter pricePerKg:");
         //pricePerKm = getValueFromCon(scanner,"Enter pricePerKm:");
+        //BigDecimal weight, pricePerKg, length, pricePerKm;
 
-        BigDecimal weight, pricePerKg, length, pricePerKm;
         try (Scanner scanner =  new Scanner(System.in)) {
             Status currentStatus =  new ReadData(scanner);
             while (currentStatus.getType() != StatusType.EXIT){
